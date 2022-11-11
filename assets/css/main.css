@@ -1,0 +1,12 @@
+body{
+    background: rgb(65, 63, 63);
+    color: white
+}
+
+.modal{
+    display: none;
+}
+
+.active{
+    display: block;
+}
