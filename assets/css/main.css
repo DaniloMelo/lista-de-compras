@@ -20,7 +20,7 @@
 body{
     background: var(--back-ground-color);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
 .fade{
@@ -30,16 +30,18 @@ body{
     left: 0;
     position: fixed;
     z-index: 5;
-    
     backdrop-filter: brightness(50%) blur(2px);
 }
 
+.new-item_desk{
+    display: none;
+}
 .hide{
     opacity: 0;
 }
 
-.hide-list-options{
+/* .hide-list-options{
     opacity: 0;
     height: 0;
-}
+} */
 
