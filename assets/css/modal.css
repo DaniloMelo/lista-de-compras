@@ -8,6 +8,11 @@
     background: var(--modal-list-bg-color);
     border-radius: .35rem;
     padding: 1em;
+    transition: .5s;
+}
+
+.modal.hide{
+    top: 0;
 }
 
 .form {
@@ -72,4 +77,11 @@
 
 .fa-xmark {
     font-size: 2em;
+}
+
+@media screen and (min-width: 769px){
+    .modal{
+        width: 40%;
+        left: 30%;
+    }
 }

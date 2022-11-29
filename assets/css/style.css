@@ -26,6 +26,11 @@
     box-shadow: 2px 1px 1px 0px rgb(204, 205, 212);
 }
 
+.list-item_options{
+    transition: .5s;
+    overflow: hidden;
+}
+
 .list-item_line{
     width: 100%;
     border-bottom: 1px solid rgb(184, 182, 182);
@@ -35,7 +40,7 @@
 .list-item_name{
     color: var(--font-primary-color);
     font-family: 'Kalam', cursive;
-    font-size: 1.2em; 
+    font-size: 1.2em;  
 }
 
 .list-item_price,
@@ -105,7 +110,7 @@
     background: var(--green-btn-color);
     position: fixed;
     right: 2em;
-    bottom: 2em;           
+    bottom: 2em;   
 }
 
 .fa-plus{
@@ -130,4 +135,3 @@
     margin-bottom: 1em;
    }
 }
-
