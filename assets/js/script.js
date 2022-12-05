@@ -5,6 +5,7 @@ const closeModalBtn = document.querySelector(".modal_btn-cancel")
 const listItems = document.querySelectorAll(".list-item") 
 const modalForm = document.querySelector(".form")
 const modalAddBtn = document.querySelector(".modal_btn-add-item")
+const shoppingList = document.querySelector(".list")
 
 const getLocalStorageData = () => JSON.parse(localStorage.getItem("shopingListDB")) ?? []
 const setLocalStorageData = (data) => localStorage.setItem("shopingListDB", JSON.stringify(data))
@@ -42,6 +43,37 @@ function saveItem (){
     }
 }
 
+
+function createListItemRow (item) {
+    const listItem = document.createElement("div")
+    
+    listItem.classList.add("list-item")
+    
+    listItem.innerHTML = `<p class="list-item_name">${item.itemName}</p>
+                            <div class="list-item_options hide-list-options">
+                                <div class="list-item_line"></div>
+                                <p class="list-item_price">Valor Unitário: <span>${item.itemPrice} R$</span></p>
+                                <p class="list-item_quant">Quantidade: <span>${item.itemQuant}</span></p>
+                                <button class="btn-edit"><i class="fa-solid fa-pen"></i>Editar</button>
+                                <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>`
+
+    shoppingList.appendChild(listItem)
+
+}
+
+function clearListItems() {
+        document.querySelectorAll(".list-item").forEach(item => {item.parentNode.removeChild(item)})
+}
+
+function updateListItems() {
+    const dbData = getLocalStorageData()
+    clearListItems()
+    dbData.forEach(createListItemRow)
+}
+
+updateListItems()
+
 openModalBtnList.forEach(btn => {
     btn.addEventListener("click", () => {
         fade.classList.toggle("hide")
@@ -56,7 +88,6 @@ closeModalBtn.addEventListener("click", () => {
     document.querySelector("#modal_item-price").value = ""
     document.querySelector("#modal_item-quant").value = ""
 })
-
 
 listItems.forEach(element => {
     element.addEventListener("click", (event)=>{
