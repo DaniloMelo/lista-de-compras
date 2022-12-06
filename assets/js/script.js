@@ -2,7 +2,7 @@ const openModalBtnList = document.querySelectorAll(".new-item")
 const fade = document.querySelector(".fade")
 const modal = document.querySelector(".modal")
 const closeModalBtn = document.querySelector(".modal_btn-cancel")
-const listItems = document.querySelectorAll(".list-item") 
+// const listItems = document.querySelectorAll(".list-item") 
 const modalForm = document.querySelector(".form")
 const modalAddBtn = document.querySelector(".modal_btn-add-item")
 const shoppingList = document.querySelector(".list")
@@ -70,6 +70,14 @@ function updateListItems() {
     const dbData = getLocalStorageData()
     clearListItems()
     dbData.forEach(createListItemRow)
+    const listItems = document.querySelectorAll(".list-item")
+    listItems.forEach(element => {
+        element.addEventListener("click", (event)=>{
+            if(event.target.classList.contains("list-item_name")){
+                event.target.nextElementSibling.classList.toggle("hide-list-options")
+            }
+        })
+    })
 }
 
 updateListItems()
@@ -89,13 +97,13 @@ closeModalBtn.addEventListener("click", () => {
     document.querySelector("#modal_item-quant").value = ""
 })
 
-listItems.forEach(element => {
-    element.addEventListener("click", (event)=>{
-        if(event.target.classList.contains("list-item_name")){
-            event.target.nextElementSibling.classList.toggle("hide-list-options")
-        }
-    })
-})
+// listItems.forEach(element => {
+//     element.addEventListener("click", (event)=>{
+//         if(event.target.classList.contains("list-item_name")){
+//             event.target.nextElementSibling.classList.toggle("hide-list-options")
+//         }
+//     })
+// })
 
 modalAddBtn.addEventListener("click", saveItem)
 
