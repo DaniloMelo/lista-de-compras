@@ -65,11 +65,11 @@
         <section class="modal hide">
             <form class="form">
                 <label for="modal_item-name">Produto</label>
-                <input type="text" id="modal_item-name" required>
+                <input type="text" id="modal_item-name" data-index="new" required>
                 <label for="modal_item-quant">Quantidade</label>
                 <input type="text" id="modal_item-quant" required>
                 <label for="modal_item-price">Preço</label>
-                <input type="number" id="modal_item-price">
+                <input type="number" step=".001" id="modal_item-price">
                 <input type="submit" class="modal_btn-add-item" value="Adicionar">
                 <button class="modal_btn-cancel"><i class="fa-solid fa-xmark"></i></button>
             </form>
@@ -82,5 +82,6 @@
         <div class="fade hide"></div>
     </main>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/models/LocalStorageDB.js"></script>
 </body>
 </html>
