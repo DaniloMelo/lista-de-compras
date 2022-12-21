@@ -23,13 +23,5 @@ class Product {
     }
 }
 
-// const teste = new Product("arroz", 10, 2)
-
-// const banco = new LocalStorageDB()
-
-// banco.saveItemDB(teste)
-
-// console.log(banco.localStorageData);
-
 
 

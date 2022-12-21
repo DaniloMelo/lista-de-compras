@@ -63,7 +63,7 @@
         
         
         <section class="modal hide">
-            <form class="form" onsubmit="productController.logInfo()">
+            <form class="form" onsubmit="productController.newProduct(event)">
                 <label for="modal_item-name">Produto</label>
                 <input type="text" id="modal_item-name" data-index="new" required>
                 <label for="modal_item-quant">Quantidade</label>
@@ -81,10 +81,11 @@
 
         <div class="fade hide"></div>
     </main>
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
     <script src="assets/js/models/LocalStorageDB.js"></script>
     <script src="assets/js/models/Product.js"></script>
     <script src="assets/js/controllers/ProductController.js"></script>
+    <script src="assets/js/views/ProductListView.js"></script>
     <script>
         const productController = new ProductController()
     </script>

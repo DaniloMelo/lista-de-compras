@@ -28,34 +28,3 @@ class LocalStorageDB{
 
 }
 
-// let temp = {
-//     itemName: "teste temp", 
-//     itemPrice: "teste temp", 
-//     itemQuant: "teste temp" 
-// }
-
-// let temp2 = {
-//     itemName: "teste temp2222", 
-//     itemPrice: "teste temp2222", 
-//     itemQuant: "teste temp2222" 
-// }
-
-// const teste = new LocalStorageDB()
-// console.log(teste.localStorageData);
-
-// teste.saveItemDB(temp)
-// teste.saveItemDB(temp)
-// teste.saveItemDB(temp)
-// teste.saveItemDB(temp)
-// teste.saveItemDB(temp)
-
-// console.log(teste.localStorageData)
-
-// teste.updateItemDB(temp2, 2)
-
-// console.log(teste.localStorageData);
-
-
-// teste.deleteItemDB(2)
-
-// console.log(teste.localStorageData);
