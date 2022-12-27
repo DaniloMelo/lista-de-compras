@@ -25,6 +25,5 @@ class LocalStorageDB{
         dBData.splice(index, 1)
         this.localStorageData = dBData
     }
-
 }
 

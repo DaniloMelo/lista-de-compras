@@ -37,11 +37,11 @@ body {
     display: none;
 }
 
-/* .hide {
+.hide {
     opacity: 0;
     z-index: -5;
     pointer-events: none;
-} */
+}
 
 .hide-list-options {
     opacity: 0;

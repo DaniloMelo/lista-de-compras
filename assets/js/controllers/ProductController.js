@@ -6,6 +6,8 @@ class ProductController{
         this._inputProdQquant = document.querySelector("#modal_item-quant")
 
         this._localStorageDB = new LocalStorageDB()
+        this._productListView = new ProductListView(document.querySelector(".list"))
+        this._productListView.update(this._localStorageDB)
     }
 
     newProduct(event){
@@ -15,7 +17,9 @@ class ProductController{
         
         this._localStorageDB.saveItemDB(product)
 
-        console.log(this._localStorageDB.localStorageData)
+        this._productListView.update(this._localStorageDB)
+
+        // console.log(this._localStorageDB.localStorageData)
     }
 }
 
