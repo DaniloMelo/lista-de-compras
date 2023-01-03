@@ -9,10 +9,12 @@ class Modal {
         ]
 
         this._modal = document.querySelector(".modal")
+        
     }
 
     toggle(){
         this._btns.forEach( btn => {
+            
             btn.addEventListener("click", (event)=>{
                 this._modal.classList.toggle("hide")
             })
