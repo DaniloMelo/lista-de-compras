@@ -17,44 +17,7 @@
     <main>
         <h1 class="title">Lista de Compras <i class="fa-solid fa-basket-shopping"></i></h1>
         
-        <section class="list">
-            
-            <!-- <div class="list-item">
-                <p class="list-item_name">Produto de teste</p>
-                <div class="list-item_options hide-list-options" data-item="options">
-                    <div class="list-item_line"></div>
-                    <p class="list-item_price">Valor Unitário: <span>123,45 R$</span></p>
-                    <p class="list-item_quant">Quantidade: <span>123</span></p>
-                    <button class="btn-edit"><i class="fa-solid fa-pen"></i>Editar</button>
-                    <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-
-            <div class="list-item">
-                <p class="list-item_name">Produto de teste</p>
-                <div class="list-item_options hide-list-options" data-item="options">
-                    <div class="list-item_line"></div>
-                    <p class="list-item_price">Valor Unitário: <span>123,45 R$</span></p>
-                    <p class="list-item_quant">Quantidade: <span>123</span></p>
-                    <button class="btn-edit"><i class="fa-solid fa-pen"></i>Editar</button>
-                    <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div>
-
-            <div class="list-item">
-                <p class="list-item_name">Produto de teste</p>
-                <div class="list-item_options hide-list-options" data-item="options">
-                    <div class="list-item_line"></div>
-                    <p class="list-item_price">Valor Unitário: <span>123,45 R$</span></p>
-                    <p class="list-item_quant">Quantidade: <span>123</span></p>
-                    <button class="btn-edit"><i class="fa-solid fa-pen"></i>Editar</button>
-                    <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
-                </div>
-            </div> -->
-
-            
-
-        </section>
+        <section class="list"></section>
         
         <section class="total">
             <h2>Total:</h2>
@@ -71,8 +34,8 @@
                 <label for="modal_item-price">Preço</label>
                 <input type="number" step=".001" id="modal_item-price">
                 <input type="submit" class="modal_btn-add-item" value="Adicionar">
-                <button class="modal_btn-cancel"><i class="fa-solid fa-xmark"></i></button>
             </form>
+            <button class="modal_btn-cancel"><i class="fa-solid fa-xmark"></i></button>
         </section>
         
         <button class="new-item"><i class="fa-solid fa-plus"></i></button>
@@ -86,6 +49,7 @@
     <script src="assets/js/models/Product.js"></script>
     <script src="assets/js/controllers/ProductController.js"></script>
     <script src="assets/js/views/ProductListView.js"></script>
+    <script src="assets/js/models/Modal.js"></script>
     <script>
         const productController = new ProductController()
     </script>
