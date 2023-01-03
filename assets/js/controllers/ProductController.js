@@ -6,18 +6,17 @@ class ProductController{
         this._inputProdQquant = document.querySelector("#modal_item-quant")
         
         this._btnsAddItem = document.querySelectorAll(".new-item")
-        // this._btnCloseModal = document.querySelector(".modal_btn-cancel")
-        
-        this._viewListItems = document.querySelectorAll(".list-item")
 
         this._localStorageDB = new LocalStorageDB()
-
-        this._productListView = new ProductListView(document.querySelector(".list"))
-        this._productListView.update(this._localStorageDB)
 
         this._modal = new Modal()
         this._modal.toggle()
 
+        this._productListView = new ProductListView(document.querySelector(".list"))
+        this._productListView.update(this._localStorageDB)
+
+        this._listItemDropDown = new ListItemDropDown()
+        this._listItemDropDown.dropDown()         
     }
 
     newProduct(event){
@@ -29,8 +28,12 @@ class ProductController{
 
         this._productListView.update(this._localStorageDB)
 
+        this._listItemDropDown.dropDown()
+        
         this._formCleaner()
     }
+
+    
 
     _formCleaner(){
         this._inputProdName.value = ""
