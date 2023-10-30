@@ -48,7 +48,7 @@
           <p class="list-item_name"><%= prod.productName %></p>
           <div class="list-item_options">
             <div class="list-item_line"></div>
-            <p class="list-item_price">Preço: <span><%= prod.productPrice %> R$</span></p>
+            <p class="list-item_price">Preço: <span>R$ <%= prod.productPrice %></span></p>
             <p class="list-item_quant">Quantidade: <span><%= prod.productQuant %></span></p>
     
             <% let productTotal = prod.productPrice * prod.productQuant; %>
@@ -66,7 +66,7 @@
     <button class="open-modal open-modal_desk">Novo Item</button>
     
     <section class="total">
-      <p>Total: <span><%= total.toFixed(2).replace(".", ",") %> R$</span></p>
+      <p>Total: <span>R$ <%= total.toFixed(2).replace(".", ",") %></span></p>
     </section> 
   </main>
 
