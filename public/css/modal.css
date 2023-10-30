@@ -1,0 +1,78 @@
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 25%; 
+  z-index: 10;
+  background: white;
+  border-radius: .35rem;
+  padding: 3em;
+  box-shadow: 4px 3px 48px 15px var(--shadows-color);
+  width: 50%;
+  max-width: 560px;
+}
+
+.modal label{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  color: var(--font-primary-color);
+}
+
+.modal input {
+  border: none; 
+  border-bottom: 1px solid #6a6780; 
+  background: transparent;
+  outline: none;
+  margin-bottom: 2rem;
+  font-family: 'Handlee', cursive;
+  font-size: 1rem;
+  color: var(--font-secondary-color);
+}
+
+.modal button {
+  background: var(--add-item-bg-color);
+  color: var(--add-item-text-color);
+  border: none;
+  border-radius: 5px;
+  padding: .5rem;
+  width: 10rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.modal button:hover {
+  background: var(--add-item-bg-color-hover);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.hide {
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.close-modal{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  align-self: end;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background: var(--delete-btn-bg-color);
+  padding: .3rem .5rem;
+  border-radius: 5px;
+}
+
+.close-modal:hover{
+  background: var(--delete-btn-bg-color-hover)
+}
+

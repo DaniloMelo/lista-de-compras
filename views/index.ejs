@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/modal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Roboto&display=swap" rel="stylesheet">
+  <title>Lista de Compras</title>
+</head>
+
+<body>
+
+  <% if(product === null) { %>
+  <form class="modal hide" action="/newProduct" method="post">
+    <a class="close-modal" href="/"><i class="fa-solid fa-xmark"></i></a>
+    <label>Produto</label>
+    <input type="text" name="productName">
+    <label>Preço</label>
+    <input type="number" name="productPrice" step="0.01">
+    <label>Quantidade</label>
+    <input type="number" name="productQuant">
+    <button type="submit">Adicionar</button>
+  </form>
+  <% } else { %>
+    <form class="modal" action="/update/<%= product._id %>" method="post">
+      <a class="close-modal" href="/"><i class="fa-solid fa-xmark"></i></a>
+      <label>Nome do produto</label>
+      <input type="text" name="productName" value="<%= product.productName %>">
+      <label>Preço</label>
+      <input type="number" name="productPrice" value="<%= product.productPrice %>" step="0.01">
+      <label>Quantidade</label>
+      <input type="number" name="productQuant" value="<%= product.productQuant %>">
+      <button type="submit">Atualizar</button>
+    </form>
+  <% } %>
+
+  <% let total = 0.0; %>
+  
+  <main>
+    <ul class="list">
+      <% productsList.forEach( prod => { %>
+        <li class="list-item">
+          <p class="list-item_name"><%= prod.productName %></p>
+          <div class="list-item_options">
+            <div class="list-item_line"></div>
+            <p class="list-item_price">Preço: <span><%= prod.productPrice %> R$</span></p>
+            <p class="list-item_quant">Quantidade: <span><%= prod.productQuant %></span></p>
+    
+            <% let productTotal = prod.productPrice * prod.productQuant; %>
+            <% total += productTotal %>
+    
+            <div class="btn-edit-delete-wraper">
+              <a class="btn-edit" href="/search/<%= prod._id %>">Editar<i class="fa-regular fa-pen-to-square"></i></a>
+              <a class="btn-delete" href="/delete/<%= prod._id %>">Apagar<i class="fa-regular fa-trash-can"></i></a>
+            </div>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+
+    <button class="open-modal open-modal_desk">Novo Item</button>
+    
+    <section class="total">
+      <p>Total: <span><%= total.toFixed(2).replace(".", ",") %> R$</span></p>
+    </section> 
+  </main>
+
+  <button class="open-modal"><i class="fa-solid fa-plus"></i></button>
+
+  <script src="https://kit.fontawesome.com/08d352d102.js" crossorigin="anonymous"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

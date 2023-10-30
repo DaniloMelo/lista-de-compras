@@ -1,0 +1,44 @@
+:root {
+  --back-ground-color: rgb(228, 241, 255);
+
+  --font-primary-color: rgb(26, 26, 61);
+  --font-secondary-color: rgb(61, 61, 117);
+  
+  --modal-list-bg-color: rgb(192, 220, 255);
+  --shadows-color: rgb(106, 104, 156);
+  
+  --edit-btn-bg-color: rgb(1, 116, 190);
+  --edit-btn-bg-color-hover: rgb(0, 87, 141);
+  --edit-btn-text-color: rgb(176, 225, 255);
+  
+  --delete-btn-bg-color: rgb(230, 72, 72);
+  --delete-btn-bg-color-hover: rgb(194, 16, 16);
+  --delete-btn-text-color: rgb(255, 194, 194);
+
+  --add-item-bg-color: rgb(56, 142, 60);
+  --add-item-bg-color-hover: rgb(40, 100, 43);
+  --add-item-text-color: rgb(216, 253, 218);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body{
+  background: var(--back-ground-color);
+  display: flex;
+  justify-content: center;
+}
+
+.new-item_desk {
+  display: none;
+}
+
+.hide-list-options {
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+}
